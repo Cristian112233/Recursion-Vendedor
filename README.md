@@ -1,0 +1,2 @@
+# Recursion-Vendedor
+Permitirá a un cliente cotizar un inmueble en pagos mensuales dependiendo de su sueldo.  El cliente podrá seleccionar un inmueble y dependiendo de su sueldo mensual, la agencia obtendrá el número de mensualidades y las cuotas a pagar cada mes bajo el siguiente criterio:  Un inmueble que cuesta P pesos, se puede pagar hasta en cinco mensualidades que representan el 50%, 40%, 30%, 20% y 10% del precio total del producto respectivamente.
