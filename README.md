@@ -1,3 +1,4 @@
+netbeans JAVA 
 Las opciones para los vendedores son:
 
 • Visualizar: Las características de un inmueble (ingresando su clave) o una lista de inmuebles de acuerdo con la selección de búsqueda. 
