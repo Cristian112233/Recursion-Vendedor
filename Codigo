@@ -1,0 +1,93 @@
+package recursiones;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Recursiones {
+   
+     public static int mensualidad(int SueldoM,float PrecioI,int numpagos,float cantidadpagada,int num)
+    {  
+       
+         int n;
+         float f = 0;
+         //5 CUATAS PRINCIPALES
+         if(numpagos == 0){
+            f = (float) (0.50 * PrecioI);
+         }
+         if(numpagos == 1){
+            f = (float) (0.40 * PrecioI);
+         }
+         if(numpagos == 2){
+            f = (float) (0.30 * PrecioI);
+         }
+         if(numpagos == 3){
+            f = (float) (0.20 * PrecioI);
+         }      
+         if(numpagos == 4){
+            f = (float) (0.10 * PrecioI);
+         }
+
+         if(SueldoM > f){
+
+                   if(numpagos == 0){
+                     float f2 = (float) (0.50 * PrecioI);
+                     //n=numpagos+1;
+                     cantidadpagada = (int) (cantidadpagada + f2);
+                     System.out.println("menusalidad: " + num + "    Cantidad a pagar: "+ f2  +  "    Cantidad¨Pagada: " + cantidadpagada);
+                     return mensualidad(SueldoM,PrecioI,numpagos+1,cantidadpagada,num+1);
+                   }
+
+                   if(numpagos == 1){
+                     float f2 = (float) (0.40 * PrecioI);
+                    // n=numpagos+1;
+                     cantidadpagada = (int) (cantidadpagada + f2);
+                     System.out.println("menusalidad: " + num + "    Cantidad a pagar: "+ f2  +  "    Cantidad¨Pagada: " + cantidadpagada);
+                     return mensualidad(SueldoM,PrecioI,numpagos+1,cantidadpagada,num+1);
+                   }
+
+                   if(numpagos == 2){
+                     float f2 = (float) (0.30 * PrecioI);
+                    // n=numpagos+1;
+                     cantidadpagada = (int) (cantidadpagada + f2);
+                     System.out.println("menusalidad: " + num + "    Cantidad a pagar: "+ f2  +  "    Cantidad¨Pagada: " + cantidadpagada);
+                     return mensualidad(SueldoM,PrecioI,numpagos+1,cantidadpagada,num+1);
+                   }
+
+                   if(numpagos == 3){
+                     float f2 = (float) (0.20 * PrecioI);
+                     //n=numpagos+1;
+                     cantidadpagada = (int) (cantidadpagada + f2);
+                     System.out.println("menusalidad: " + num + "    Cantidad a pagar: "+ f2  +  "    Cantidad¨Pagada: " + cantidadpagada);
+                     return mensualidad(SueldoM,PrecioI,numpagos+1,cantidadpagada,num+1);
+                   }
+                   if(numpagos == 4){
+                     float f2 = (float) (0.10 * PrecioI);
+                    // n=numpagos+1;
+                     cantidadpagada = (int) (cantidadpagada + f2);
+                     System.out.println("menusalidad: " + num + "    Cantidad a pagar: "+ f2  +  "    Cantidad¨Pagada: " + cantidadpagada);
+                    return  mensualidad(SueldoM,PrecioI,numpagos+1,cantidadpagada,num+1);
+                   }   
+                   
+         }
+         //5 SUBCUOTAS
+        else{      
+            
+            return mensualidad(SueldoM,PrecioI,numpagos+1,f,mensualidad(SueldoM,f,0,0,num));
+        }
+       return num;       
+           
+     }
+       
+    public static void main(String[] args) {
+       	int dato, dato2;
+        String cad,c;
+	Scanner teclado = new Scanner(System.in);
+
+        System.out.println("Dame el sueldo: ");
+        dato = teclado.nextInt();
+        System.out.println("Dame el Precio del inmueble: ");
+        dato2 = teclado.nextInt();
+        mensualidad(dato,dato2,0,0,1);
+    }
+    
+}
